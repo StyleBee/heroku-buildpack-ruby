@@ -23,7 +23,7 @@ module BinaryDependencies
       puts "Downloading #{name} from #{url}"
       ::Dir.chdir(bin_dir) do |dir|
         run("curl #{url} -s -o - | tar xzf -")
-        ::File.open("#{lib_so_conf_dir}/#{name}.conf", 'w') do |file|
+        ::File.open("#{pwd}/#{lib_so_conf_dir}/#{name}.conf", 'w') do |file|
           file.write("/app/bin/#{name}/lib")
         end
       end
@@ -33,5 +33,10 @@ module BinaryDependencies
   def self.run(command)
     %x{ #{command} 2>&1 }
   end
+
+  def pwd
+    `pwd`.chomp
+  end
+
 
 end
