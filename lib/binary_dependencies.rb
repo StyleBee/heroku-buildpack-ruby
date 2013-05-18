@@ -34,9 +34,8 @@ module BinaryDependencies
     %x{ #{command} 2>&1 }
   end
 
-  def pwd
+  def self.pwd
     `pwd`.chomp
   end
-
 
 end
