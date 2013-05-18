@@ -4,6 +4,10 @@
 $stdout.sync = true
 
 $:.unshift File.expand_path("../../lib", __FILE__)
+
+require "binary_dependencies"
+BinaryDependencies.vendor(ARGV[0])
+
 require "language_pack"
 
 if pack = LanguagePack.detect(ARGV[0], ARGV[1])
