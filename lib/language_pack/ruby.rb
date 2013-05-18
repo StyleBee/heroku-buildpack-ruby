@@ -679,3 +679,6 @@ params = CGI.parse(uri.query || "")
     install_language_pack_gems
   end
 end
+
+# Add Recompile Gems functionality
+require "language_pack/recompile_gems"
