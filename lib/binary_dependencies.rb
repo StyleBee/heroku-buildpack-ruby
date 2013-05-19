@@ -11,7 +11,7 @@ module BinaryDependencies
   # @param [Array] first argument is a String of the build directory
   # @return +nil+
   def self.vendor(*args)
-    #::Dir.chdir(args.first)
+    ::Dir.chdir(args.first)
     #lib_so_conf_dir = "#{pwd}/etc/ld.so.conf.d"
     #::FileUtils.mkdir_p(lib_so_conf_dir)
 
